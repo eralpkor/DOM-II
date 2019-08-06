@@ -181,6 +181,9 @@ img {
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
 }
+.main-navigation .animateMainNav {
+  background: red;
+}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
@@ -214,6 +217,24 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+}
+.main-navigation .hideMe {
+  height: 75%;
+  transform: translateX(-10%);
+}
+.main-navigation .slideRight {
+  animation-name: bus-in;
+  animation-duration: 10s;
+  height: 50%;
+  transform: translateX(1500px);
+}
+@keyframes bus-in {
+  from {
+    transform: translateX(-80%);
+  }
+  to {
+    transform: translateX(1500px);
+  }
 }
 .footer {
   width: 100%;
