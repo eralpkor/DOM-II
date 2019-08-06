@@ -5,7 +5,8 @@ const nav = document.querySelector('.nav');
 const mainNav = document.querySelector('.main-navigation');
 const zoom = document.getElementById('zoom');
 // const btn1 = document.querySelector('#btn-1');
-var btn = document.getElementsByClassName('btn');
+const btn = document.getElementsByClassName('btn');
+const home = document.getElementById('home');
 
 
 // "mouseover" change color for nav elements for .5ms 
@@ -29,11 +30,11 @@ window.addEventListener('scroll', () => {
     mainNav.style.background = '#86d089';
 
   } else if (this.pageYOffset < 100) {
-    mainNav.style.background = 'white';
-  busInImg.classList.replace( 'slideRight', 'hideMe');
+    mainNav.style.background = '';
+    busInImg.classList.replace( 'slideRight', 'hideMe');
 
   }
-})
+});
 
 // "select" select and copy some text to clipboard
 function getSelectionText() {
@@ -67,13 +68,13 @@ document.addEventListener('mouseup', function () {
 
 // "doubleclick" change targets color on double click
 window.addEventListener('dblclick', (e) => {
-  e.target.style.background = "#73dfed"; //change color to blue
+  e.target.style.background = '#73dfed'; //change color to blue
   setTimeout(function(){
-    e.target.style.background = "";
+    e.target.style.background = '';
   }, 6000);
 });
 
-// another double click event
+// another double click
 mainNav.addEventListener('dblclick', (e) => {
     e.stopPropagation();
 });
@@ -92,7 +93,13 @@ mainNav.addEventListener('dblclick', (e) => {
 });
 
 
-
+// 'keydown' event
+document.addEventListener('keydown', () => {
+  home.style.background = 'green';
+  setTimeout(() => {
+    home.style.background = '';
+  }, 5000);
+});
 
 
 
