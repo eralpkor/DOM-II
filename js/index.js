@@ -31,14 +31,24 @@ window.addEventListener('scroll', () => {
   }
 })
 
-function logSelection(event) {
-  const log = document.getElementById('log');
-  const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-  log.textContent = `You selected: ${selection}`;
+// "select" select and copy some text to clipboard
+function getSelectionText() {
+  var selectedText = ""
+  if (window.getSelection) {
+    selectedText = window.getSelection().toString()
+  }
+  return selectedText
 }
 
-const input = document.querySelector('input');
-input.addEventListener('select', logSelection);
+// "mouseup" alert with selected text
+document.addEventListener('mouseup', function(){
+  var theText = getSelectionText()
+  if (theText.length > 0){ // check there's some text selected
+      alert(`You selected: ${theText}`); // Alerts whatever textual content the user has selected on the page
+  }
+}, false);
+
+
 
 // function zoom(event) {
 //   event.preventDefault();
