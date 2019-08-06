@@ -48,6 +48,11 @@ document.addEventListener('mouseup', function(){
   }
 }, false);
 
+// "doubleclick" change targets color on double click
+window.addEventListener('dblclick', (event) => {
+  event.target.style.background = "#73dfed"; //change color to blue
+  setTimeout(function(){event.target.style.background = ""}, 6000);
+});
 
 
 // function zoom(event) {
