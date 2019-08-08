@@ -1,9 +1,15 @@
+
+
 .main-navigation {
   width: 100%;
   height: 90px;
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
+
+  .animateMainNav {
+    background: red;
+  }
 
   .nav-container {
     height: 100%;
@@ -41,4 +47,28 @@
       }
     }
   }
+
+ 
+
+  // .hideMe, .slideRight {
+  //   // order: 4;
+  //   align-self: flex-end;
+  // }
+  .hideMe {
+    height: 75%;
+    transform: translateX(-10%)
+  }
+
+  .slideRight {
+    animation-name: bus-in;
+    animation-duration: 10s;
+    height: 50%;
+    transform: translateX(1500px)
+  }
+
+  @keyframes bus-in {
+    from {transform: translateX(-80%);}
+    to {transform: translateX(1500px)}
+  }
 } // .main-navigation
+
